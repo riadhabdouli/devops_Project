@@ -1,0 +1,39 @@
+<body>
+  <div class="container">
+    <div class="innerwrap">
+      <section class="section1 clearfix">
+        <div>
+          <div class="row grid clearfix">
+            <div class="col2 first">
+              <form [formGroup]="form" id="profile">
+                <div *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+              <img [src]="imagePreview" >
+            </div>
+            </form>
+              <h1>{{ this.trainer.first_name }}  {{ this.trainer.last_name}}</h1>
+              <p>{{ this.trainer.introduction}}</p>
+              <button   (click)="onHireTrainer()" *ngIf="this.profession == 'member' ">Hire Trainer</button>
+            </div>
+            <div class="col2 last">
+              <div class="grid clearfix">
+                <div class="col3 first">
+                  <span>Has trained</span>
+                  <h1>{{this.trainer.members.length}}</h1>  
+                </div>
+                <div class="col3"><span>Is training</span>
+                  <h1>{{this.trainer.members.length}}</h1></div>
+                <div class="col3 last"><span>Hiring requests :</span>
+                <h1>{{this.trainer.members.length + this.hires.length}}</h1></div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <span class="smalltri">
+          
+        <i class="fa fa-star"></i>
+        </span>
+      </section>
+    </div>
+  </div>	
+  </body>

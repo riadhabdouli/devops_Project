@@ -1,0 +1,20 @@
+<body>
+
+  <mat-card *ngIf="hires.length==0" class="req">
+    <mat-card-title>You have no requests Yet !</mat-card-title>
+  </mat-card>
+<mat-card *ngFor="let req of hires; let i = index">
+   <mat-card-title>
+     Member Name :   {{ req.memberName }}
+   </mat-card-title>
+   <mat-card-content>
+       Height :  {{req.height}}
+   </mat-card-content>
+   <mat-card-content>
+    Weight :  {{req.weight}}
+</mat-card-content>
+
+<button mat-raised-button class="accept-button" (click)="onAccept(hires[i].trainerId,hires[i].memberName,hires[i].memberId,hires[i]._id)" > Accept</button>
+<button mat-raised-button class="reject-button"(click)="onReject(hires[i]._id)" > Reject</button>
+</mat-card>
+</body>

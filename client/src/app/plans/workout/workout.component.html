@@ -1,0 +1,88 @@
+<body>
+    <mat-card class="profile-details">
+        <mat-card-title>Workout Plan</mat-card-title>
+        <div class="membersLab"  *ngIf="this.profession!= 'member'">
+          <label for="membersLab">Choose a member :</label>
+          &nbsp; &nbsp;
+          <select id="selectedMember" (change)="viewPlan($event.target)" >
+            <option value ="">   </option>
+               <option *ngFor="let tMembers of members" value={{tMembers.mid}}>{{tMembers.name}}
+               </option>
+          </select> 
+        &nbsp;  &nbsp;
+        </div>
+         
+        <br>
+      <form [formGroup]="workoutForm" id="workout" (submit)="EditWplan(workoutForm)">
+          <div class="Monday">
+        <h3>Monday</h3>  <h3>Tuesday</h3>   <h3>Wednesday</h3>  <h3>Thursday</h3>  <h3>Friday</h3>  
+        <h3>Saturday</h3>  <h3>Sunday</h3>
+        <br> 
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 1 </mat-label>
+          <input matInput type="text" formControlName="S1Monday" placeholder="Session 1">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Tuesday" placeholder="Session 1">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Wednesday" placeholder="Session 1">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Thursday" placeholder="Session 1">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Friday" placeholder="Session 1">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Saturday" placeholder="Session 1">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Session 1 </mat-label>
+            <input matInput type="text" formControlName="S1Sunday" placeholder="Session 1">
+          </mat-form-field>
+        
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Monday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Tuesday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Wednesday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Thursday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Friday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Saturday" placeholder="Session 2">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Session 2 </mat-label>
+          <input matInput type="text" formControlName="S2Sunday" placeholder="Session 2">
+        </mat-form-field>
+    </div>
+<br>
+    <br>
+        <button mat-raised-button color="primary" type="submit" *ngIf="this.profession != 'member'">Save Plan</button>
+      </form>
+     </mat-card>
+</body>
+
+

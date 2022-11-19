@@ -1,0 +1,49 @@
+<body>
+  <video id="background-video" autoplay loop muted poster="home.jpg">
+    <source src="../../../assets/vid.mp4" type="video/mp4">
+  </video>
+
+  <div class="card">
+<div class="publicPage">
+  <div class="container">
+    <div class="row">
+      
+       
+          <div class="card-body">
+            <h2 class="card-title text-center">Sign In</h2>
+            <form class="form-signin" (submit)="onLogin(loginForm)" #loginForm="ngForm">
+              <div class="form-group">
+                <label for="inputEmail">Email address *</label>
+                <input #emailInput="ngModel" type="email" name="email" matInput class="form-control rounded"
+                  id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" ngModel>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="inputPassword">Password *</label>
+                <input type="password" name="password" matInput class="form-control rounded" id="inputPassword"
+                  aria-describedby="passwordHelp" placeholder="Enter password" ngModel>
+              </div>
+
+              <p class="alert alert-danger" role="alert" *ngIf="error">
+                <strong>There was an error!</strong><br>Please check your username/password and try again.
+              </p>
+              <br>
+
+              <button id="submitButton" class="btn btn-primary btn-block text-uppercase" type="submit"
+                [disabled]="!loginForm.valid || processing">{{ processing ? 'Validating...' : 'Sign in' }}</button>
+
+            </form>
+        
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<div class="content">
+  <h1>Welcom to COACHINY</h1>
+  <p>
+    For a personalized training and a customized program, COACHINY offers you the possibility to consult the coaches' profiles and to hire your private coaching sessions. </p>
+  <!-- Use a button to pause/play the video with JavaScript -->
+  <button id="myBtn" >Contact-Us</button>
+</div>
+</body>

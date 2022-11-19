@@ -1,0 +1,75 @@
+<body>
+  <div class="del">
+  <div class="profile-div">
+    <mat-card class="profile-img">
+      <form [formGroup]="form3" (submit)="onUpdateImage(form3)">
+        <mat-card-title>Profile Picture</mat-card-title>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form3.get('image').valid">
+          <img [src]="imagePreview" [alt]="form3.value.title">
+        </div>
+        <div class="flex-parent jc-center">
+          <button mat-raised-button color="primary" type="button" class="button-pic" (click)="filePicker.click()">Upload
+            New Photo</button>
+          <input type="file" #filePicker (change)="onImagePicked($event)">
+          <button mat-raised-button color="primary" type="submit" class="button-save"
+            *ngIf="imagePreview !== '' && imagePreview && form3.get('image').valid">Save</button>
+        </div>
+        <br>
+      </form>
+    </mat-card>
+
+    <mat-card class="profile-pass">
+      <mat-card-title>Change Password</mat-card-title>
+      <br>
+      <form [formGroup]="form2" id="pass" (submit)="onChangePass(form2)">
+        <mat-form-field appearance="fill" class="input-Pass">
+          <mat-label> Old Password </mat-label>
+          <input matInput type="password" formControlName="old_pass" placeholder="Old Password">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-Pass">
+          <mat-label> New Password </mat-label>
+          <input matInput type="password" formControlName="new_pass" placeholder="New Password">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-Pass">
+          <mat-label> Repeat New Password </mat-label>
+          <input matInput type="password" formControlName="renew_pass" placeholder="Repeat New Password">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" class="button-pass">Save</button>
+      </form>
+    </mat-card>
+
+    <mat-card class="profile-details">
+      <mat-card-title>Profile Details</mat-card-title>
+      <br>
+      <form [formGroup]="form1" id="profile" (submit)="onUpdate(form1)">
+        <mat-form-field appearance="fill">
+          <mat-label> First name </mat-label>
+          <input matInput type="text" formControlName="first_name" placeholder="First name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Last name </mat-label>
+          <input matInput type="text" formControlName="last_name" placeholder="Last name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Email </mat-label>
+          <input matInput type="text" formControlName="email" placeholder="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill" *ngIf="this.prof=='member'">
+          <mat-label> Height </mat-label>
+          <input matInput type="text" formControlName="height" placeholder="height">
+        </mat-form-field>
+        <mat-form-field appearance="fill" *ngIf="this.prof=='member'" > 
+          <mat-label> weight </mat-label>
+          <input matInput type="text" formControlName="weight" placeholder="weight">
+        </mat-form-field>
+        <mat-form-field appearance="fill" *ngIf="this.prof!='member'">
+          <mat-label> Introduction </mat-label>
+          <textarea matInput formControlName="intro" placeholder="Introduction" class="textArea"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+</body>

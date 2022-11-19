@@ -1,0 +1,116 @@
+<body>
+    <mat-card class="profile-details">
+        <mat-card-title>Nutrition Plan</mat-card-title>
+        <div class="membersLab"  *ngIf="this.profession!= 'member'">
+        <label for="membersLab">Choose a member :</label>
+        &nbsp; &nbsp;
+        <select id="selectedMember" (change)="viewPlan($event.target)" >
+          <option value ="">   </option>
+             <option *ngFor="let tMembers of members" value={{tMembers.mid}}>{{tMembers.name}}
+             </option>
+        </select> 
+      &nbsp;  &nbsp;
+      </div>
+        <br>
+      <form [formGroup]="nutriForm" id="nutriForm"  (submit)="EditNplan(nutriForm)">  
+          <div class="Monday">
+        <h3>Monday</h3>  <h3>Tuesday</h3>   <h3>Wednesday</h3>  <h3>Thursday</h3>  <h3>Friday</h3>  
+        <h3>Saturday</h3>  <h3>Sunday</h3>
+        <br> 
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label> Breakfast </mat-label>
+          <input matInput type="text" formControlName="Breakfast1" placeholder="Breakfast">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast2" placeholder="Breakfast">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast3" placeholder="Breakfast">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast4" placeholder="Breakfast">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast5" placeholder="Breakfast">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast6" placeholder="Breakfast">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Breakfast </mat-label>
+            <input matInput type="text" formControlName="Breakfast7" placeholder="Breakfast">
+          </mat-form-field>
+        
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label> Lunch </mat-label>
+          <input matInput type="text" formControlName="Lunch1" placeholder="Lunch">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch2" placeholder="Lunch">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch3" placeholder="Lunch">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch4" placeholder="Lunch">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch5" placeholder="Lunch">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch6" placeholder="Lunch">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Lunch </mat-label>
+            <input matInput type="text" formControlName="Lunch7" placeholder="Lunch">
+          </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label> Dinner </mat-label>
+          <input matInput type="text" formControlName="Dinner1" placeholder="Dinner">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner2" placeholder="Dinner">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner3" placeholder="Dinner">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner4" placeholder="Dinner">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner5" placeholder="Dinner">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner6" placeholder="Dinner">
+          </mat-form-field>
+          <mat-form-field appearance="fill" >
+            <mat-label> Dinner </mat-label>
+            <input matInput type="text" formControlName="Dinner7" placeholder="Dinner">
+          </mat-form-field>
+    </div>
+
+    <br>
+        <button mat-raised-button color="primary" type="submit" class="savePlan" *ngIf="this.profession!= 'member'" >Save Plan</button>
+      </form>
+     </mat-card>
+</body>
+
+

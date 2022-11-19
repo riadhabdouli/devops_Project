@@ -1,0 +1,59 @@
+<header class="header-section">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-3">
+              <div class="logo">
+                  <a href="./index.html">
+                      <img src="../../assets/img/logo.png" alt="">
+                  </a>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <nav class="nav-menu">
+                  <ul>
+                      <li class="active"><a href="/home">Home</a></li>
+                      <!-- <li *ngIf="userIsAuthenticated">
+                        <a  routerLink="/chat" >Chat</a>
+                      </li> -->
+                      <span class="spacer"></span>
+                      <li *ngIf="userIsAuthenticated">
+                        <a [matBadge]="this.notif" matBadgeColor="warn" routerLink="/members" routerLinkActive="mat-accent" *ngIf="this.profession =='trainer'">Members</a>
+                      </li>
+                      <li *ngIf="userIsAuthenticated"><a (click)="onClickProfile()">Profile</a></li>
+                      <li *ngIf="userIsAuthenticated"><a href="#">Plans</a>
+                          <ul class="dropdown">
+                              <li><a (click)="onClickWorkoutPlan()">Workout Plan</a></li>
+                              <li><a (click)="onClicknutriPlan()">Nutrition Plan</a></li>  
+                          </ul>
+                      </li>
+                      <li *ngIf="!userIsAuthenticated">
+                        <a  routerLink="/register" >Register</a>
+                      </li>
+                      <li *ngIf="!userIsAuthenticated">
+                        <a  routerLink="/login" >Login</a>
+                      </li>
+                      <li *ngIf="userIsAuthenticated">
+                        <a  (click)="onLogout()">Logout</a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="col-lg-3">
+              <div class="top-option">
+                  <div class="to-search search-switch">
+                      <i class="fa fa-search"></i>
+                  </div>
+                  <div class="to-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-youtube-play"></i></a>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="canvas-open">
+          <i class="fa fa-bars"></i>
+      </div>
+  </div>
+</header>

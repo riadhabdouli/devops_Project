@@ -1,0 +1,33 @@
+<body><br><div class="del">
+<h1 style="text-align:center">Welcome To Coachiny </h1>
+<br>
+<mat-card *ngIf='this.notActivated==false' class="aproval">
+  <mat-card-title> Waiting for admin aproval !</mat-card-title>
+</mat-card>
+<div *ngIf='this.notActivated==true'>
+<form [formGroup]="form" >
+<div *ngFor="let trainer of trainers; let i = index">
+<div class="card jc-center">
+
+  <ng-container  *ngIf="trainer.profile_image !='' ">
+  <img [src]='trainer.dataSource' alt="John" style="width:100%">
+</ng-container>
+
+<ng-container  *ngIf="trainer.profile_image =='' ">
+<img src='../../assets/default.jpg' alt="John" style="width:100%">
+</ng-container>
+
+ <!--  <h1>{{trainer.first_name}} {{trainer.last_name}}</h1> -->
+  <p class="title">Certified Personal Trainer</p>
+  <p>{{trainer.first_name}}</p>
+
+ <p>{{trainer.email}}</p>
+  <p> <button type="button" class="btn btn-danger btn-sm"(click)="send(trainers[i]._id)">View Profile</button></p>
+</div>
+</div>
+</form>
+</div>
+</div>
+</body>
+
+

@@ -1,0 +1,28 @@
+<table class="table table-bordered" >
+    <thead class="table-success">
+      <tr>
+        
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th> 
+        <th scope="col">Status</th> 
+        <th scope="col">Decision</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Trainers of trainers; let i = index">
+        <td>{{Trainers.first_name}}</td> 
+        <td>{{Trainers.last_name}}</td>
+        <td>{{Trainers.email}}</td>
+        <td>{{Trainers.status}}</td>
+
+        <td class="text-left edit-block">
+            <button type="button" class="btn btn-success"(click)="ApproveTrainer(trainers[i]._id)">Approve</button>
+            <button type="button" class="btn btn-danger" (click)="RejectTrainer(trainers[i]._id)">Reject</button>
+            <!-- <button type="button" class="btn btn-primary">Review</button> -->
+          </td>
+     
+      </tr>
+    </tbody>
+  </table>

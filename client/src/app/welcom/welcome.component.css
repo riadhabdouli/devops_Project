@@ -1,0 +1,22 @@
+@import url('css/bootstrap.min.css');
+
+@import url('css/flaticon.css');
+@import url('css/owl.carousel.min.css');
+@import url('css/barfiller.css');
+@import url('css/magnific-popup.css');
+@import url('css/slicknav.min.css');
+@import url('css/style.css'); 
+
+ .hero-section{
+     background-image: url("../../assets/img/hero/hero-1.jpg") ;
+     background-repeat: no-repeat, no-repeat;
+     height: 1000px;
+     width: 100%;
+} 
+
+.banner-section{
+     background-image: url("../../assets/img/banner-bg.jpg") ;
+     background-repeat: no-repeat, no-repeat;
+     height: 600px;
+     width: 100%;
+} 

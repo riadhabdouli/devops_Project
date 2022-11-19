@@ -1,0 +1,33 @@
+body{
+    padding-top: 150px;
+    background-image: url('background.jpg');
+    width: 100%;
+    height: 130%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+mat-card {
+    margin : 20px;
+    width: 400px;
+    height: 190px;
+}
+
+.reject-button{
+   
+    margin: 5px;
+    color:firebrick;
+}
+
+.accept-button{
+    margin: 5px;
+    color:rgb(34, 44, 178);
+}
+
+.req{
+    width: 340px;
+    height: 70px;
+    margin-left: 550px;
+  }
