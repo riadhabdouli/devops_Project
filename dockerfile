@@ -13,4 +13,5 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/bin/bash","/usr/sbin/httpd", "-D", "FOREGROUND","/bin/bash"]
+
 EXPOSE 80 22 
