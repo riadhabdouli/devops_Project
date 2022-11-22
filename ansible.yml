@@ -6,3 +6,7 @@
      - name: create new service  
        command: kubectl apply -f /home/ubuntu/Service.yml
 
+
+
+
+
