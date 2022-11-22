@@ -7,3 +7,4 @@
        command: kubectl apply -f /home/ubuntu/Service.yml
 
 
+
