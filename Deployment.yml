@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: riadhabdouli
+spec:
+  replicas: 2
+  selector:
+   matchLabels:
+    app: riadhabdouli
+  template:
+     metadata:
+      labels:
+        app: riadhabdouli
+     spec:
+      containers:
+       - name: riadhabdouli
+         image: riadhabdouli/pipeline_validation
+         imagePullPolicy: Always
+         Ports:
+         - containerPort: 80
