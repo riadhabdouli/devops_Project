@@ -1,14 +1,14 @@
-kind: Service
+kind: Service                             
 apiVersion: v1
 metadata:
   name: riadhabdouli
   labels:
     app: riadhabdouli
 spec:
-  port:
-   - port: 8080
-     targetPort: 80
-     nodePort: 31200
+  ports:
+    - port: 8080                               
+      targetPort: 80                    
+      nodePort: 31200
   selector:
-    app: riadhabdouli
-  type: LoadBalancer
+    app: riadhabdouli                    
+  type: LoadBalancer    
