@@ -14,7 +14,7 @@ spec:
      spec:
       containers:
        - name: riadhabdouli
-         image: riadhabdouli/pipeline_validation
+         image: riadhabdouli/pipeline
          imagePullPolicy: Always
          Ports:
          - containerPort: 80
