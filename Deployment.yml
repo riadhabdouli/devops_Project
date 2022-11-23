@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: riadhabdouli
+   name: riadhabdouli
 spec:
-  replicas: 2
-  selector:
-   matchLabels:
-    app: riadhabdouli
-  template:
-     metadata:
-      labels:
-        app: riadhabdouli
-     spec:
-      containers:
-       - name: riadhabdouli
-         image: riadhabdouli/pipeline
-         imagePullPolicy: Always
-         Ports:
-         - containerPort: 80
+   replicas: 2
+   selector:      # tells the controller which pods to watch/belong to
+    matchLabels:
+     app: riadhabdouli
+   template:
+      metadata:
+        labels:
+          app: riadhabdouli
+      spec:
+       containers:
+        - name: riadhabdouli
+          image: riadhabdouli/pipeline
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80

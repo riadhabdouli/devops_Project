@@ -1,14 +1,14 @@
 kind: Service                             
 apiVersion: v1
 metadata:
-  name: riadhabdouli
+  name: mrdevops
   labels:
-    app: riadhabdouli
+    app: mrdevops
 spec:
   ports:
     - port: 8080                               
       targetPort: 80                    
       nodePort: 31200
   selector:
-    app: riadhabdouli                    
-  type: LoadBalancer    
+    app: mrdevops                    
+  type: LoadBalancer                   
